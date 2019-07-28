@@ -8,218 +8,182 @@
 // Add a try again button at end screen
 
 
-var questionsArr = 
-    [
-        one = 
-            {
-                question:'Who sings the "Gilmore Girls" theme song?',
-                rightAnswer: "Carole King",
-                optionA:"Stevie Nicks",
-                optionB:"Carole King",
-                optionC:"Mariah Carey",
-                optionD:"Katy Perry",
-                gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqov5zNNx8FyHS0/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        two = 
-            {
-                question:'What is the name of the private school Rory attends?',
-                rightAnswer:"Chilton",
-                optionA: "Tipton",
-                optionB: "Harvard",
-                optionC: "Overbrook",
-                optionD: "Chilton",
-                gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTzIRIjwV2pHMkM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        three = 
-            {
-                question: "What are the first words in the pilot episode?",
-                rightAnswer:'"Please Luke. Please, please, please."',
-                optionA:'"Please Luke. Please, please, please."',
-                optionB: '"Coffee coffee coffee!"',
-                optionC: "Watch out!",
-                optionD: '"Did I put on underwear?"',
-                gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUySTPAS9poVD23jCo/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        four = 
-            {
-                question: "What is the name of the inn where Lorelai works in the early seasons?",
-                rightAnswer: 'The Independence Inn',
-                optionA:"Freedom Inn",
-                optionB:"The Patriot Inn",
-                optionC:'The Independence Inn',
-                optionD:"The Chilton",
-                gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l1L0gM1jJiWskWt8I/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        five = 
-            {
-                question:"What day of the week is dinner with the grandparents on?",
-                rightAnswer:"Friday",
-                optionA:"Friday",
-                optionB:"Sunday",
-                optionC:"Thursday",
-                optionD:"Saturday",
-                gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqrPftTyi8zq848/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        six = 
-            {
-                question:"Who is Rory's nemesis when she first starts at Chilton?",
-                rightAnswer:"Paris",
-                optionA:"Morgan",
-                optionB:"Emily",
-                optionC:"Paris",
-                optionD:"Lorelai",
-                gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/3ofT5OGmdbeaMtUSYg/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        seven = 
-            {
-                question:"What does Lorelai have a keen sense of smell for?",
-                rightAnswer:"Snow",
-                optionA:"Rain",
-                optionB:"Snow",
-                optionC:"Coffee",
-                optionD:"Lying",
-                gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l0ErAPxo8r9aXLSH6/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
-            },
-        eight = 
-            {
-                question:"What is the name of the Chilton school newspaper?",
-                rightAnswer:"The Franklin",
-                optionA:"The Gazette",
-                optionB:"The Herald",
-                optionC:"The Daily",
-                optionD:"The Franklin",
-                gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTN0WMbFqv1DcIM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',   
-            },
-    ]
+
 $( document ).ready(function() 
     {
-        function start()
+        var counter = 0;
+        var clock;
+        var time =30;
+        var answersRight=0;
+        var answersWrong=0;
+        var answersIncomplete=0;
+        var questionsArr = 
+        [
+            one = 
+                {
+                    question:'Who sings the "Gilmore Girls" theme song?',
+                    rightAnswer: "Carole King",
+                    options:["Stevie Nicks", "Carole King", "Mariah Carey", "Katy Perry"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqov5zNNx8FyHS0/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            two = 
+                {
+                    question:'What is the name of the private school Rory attends?',
+                    rightAnswer:"Chilton",
+                    options:["Tipton", "Harvard", "Overbrook", "Chilton"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTzIRIjwV2pHMkM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            three = 
+                {
+                    question: "What are the first words in the pilot episode?",
+                    rightAnswer:'"Please Luke. Please, please, please."',
+                    options:['"Please Luke. Please, please, please."', '"Coffee coffee coffee!"', '"Watch out!"', '"Did I put on underwear?"'],
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUySTPAS9poVD23jCo/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            four = 
+                {
+                    question: "What is the name of the inn where Lorelai works in the early seasons?",
+                    rightAnswer: 'The Independence Inn',
+                    options:["Freedom Inn", "The Patriot Inn", "The Independence Inn", "The Chilton"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l1L0gM1jJiWskWt8I/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            five = 
+                {
+                    question:"What day of the week is dinner with the grandparents on?",
+                    rightAnswer:"Friday",
+                    options:["Friday", "Sunday", "Thursday", "Saturday"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqrPftTyi8zq848/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            six = 
+                {
+                    question:"Who is Rory's nemesis when she first starts at Chilton?",
+                    rightAnswer:"Paris",
+                    options:["Morgan", "Emily", "Paris", "Lorelai"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/3ofT5OGmdbeaMtUSYg/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            seven = 
+                {
+                    question:"What does Lorelai have a keen sense of smell for?",
+                    rightAnswer:"Snow",
+                    options:["Rain", "Snow", "Coffee", "Lying"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l0ErAPxo8r9aXLSH6/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                },
+            eight = 
+                {
+                    question:"What is the name of the Chilton school newspaper?",
+                    rightAnswer:"The Franklin",
+                    options:["The Gazette", "The Herald", "The Daily", "The Franklin"],
+                    gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTN0WMbFqv1DcIM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',   
+                },
+        ]
+        //creates my questions with all possible answers
+       // each button is assigned the class "choices" 
+        $("#startOver").click(generateQuestions);
+        function generateQuestions()
             {
-                var i = 0;
-                var timeRemaining = 31;
-                var gameStarted = false;
-                var questionsWrong = 0;
-                var questionsRight = 0;
-                var selection="";
-                var objectPos = questionsArr[i];
-                function grabSelection() 
+                if(counter < questionsArr.length)
                     {
-                        selection=$(this).text();
-                        console.log(selection)
-                        console.log(i);
-                        if(selection == objectPos.rightAnswer)
+                        time = 30;
+                        $("#questionsBox").html("");
+                        $("#questionsBox").append("<p class='timeRemaining'><b>"+time+"</b></p>");
+                        $("#questionsBox").append(questionsArr[counter].question);
+                        for(i=0; i<questionsArr[counter].options.length; i++)
                             {
-                                i++
-                                console.log(i);
-                                generateQuestions();
+                                $("#questionsBox").append("<button class='choices'>" + questionsArr[counter].options[i] + "</button>");
                             }
+                        timer();
+                        onTimeout();                        
                     }
-                $("#questionsBox").html("");
-                //If statement below starts the game from the first question immediately.
-                if(i===0)
+                else
                     {
-                        gameStarted=true;
-                        //var objectPos = questionsArr[i];
-                        timeRemaining=31; 
-                        $("#questionsBox").html('<span id="timeLeft"></span><br>'+'<span class="question">' + objectPos.question + '</span> <button class="answer"id="'+ objectPos.optionA + '">' + objectPos.optionA + ' </button>' + '<button class="answer" id="'+ objectPos.optionB + '" >' + objectPos.optionB + ' </button>' + '<button class="answer" id="'+ objectPos.optionC + '">' + objectPos.optionC + '  </button>' + '<button class="answer" id="'+ objectPos.optionD + '">' + objectPos.optionD + '  </button>' + objectPos.gif);   
+                        displayResults();
                     }
-                //Self calling function below to generate my questions
-                    function generateQuestions() 
+            }
+        
+        function onCorrect()
+            {
+                $("#questionsBox").html("That is correct!");
+                answersRight++
+                $("#questionsBox").append("<div class='gif'>" + questionsArr[counter].gif + "</div>");
+                counter++
+                setTimeout(generateQuestions, 4000);                
+            }
+
+        function onWrong()
+            {
+                $("#questionsBox").html("That is wrong!");
+                answersWrong++
+                $("#questionsBox").append("<p> The correct answer is: " + questionsArr[counter].rightAnswer + ".</p>");
+                $("#questionsBox").append("<div class='gif'>" + questionsArr[counter].gif + "</div>");
+                counter++
+                setTimeout(generateQuestions, 4000);                
+            }
+
+        function onTimeout()
+            {
+                if (time === 0)
+                    {
+                        $("#questionsBox").html("<p> You ran out of time!</p>");
+                        answersIncomplete++
+                        $("#questionsBox").append("<p> The correct answer is: " + questionsArr[counter].rightAnswer + ".</p>");
+                        $("#questionsBox").append("<div class='gif'>" + questionsArr[counter].gif + "</div>");
+                        counter++
+                        setTimeout(generateQuestions, 4000); 
+                    }
+            }
+        // Displays answers right, wrong, and amount of timeouts.
+        function displayResults()
+            {
+                $("#questionsBox").html("Game Over.");
+                $("#questionsBox").append("You got " + answersRight + " questions right.");
+                $("#questionsBox").append("You got " + answersWrong +" questions wrong");
+                $("#questionsBox").append("You left " + answersIncomplete + " questions incomplete because you were slow.");
+                $("#questionsBox").append("<h1> Start over? </h1><br>");
+                $("#questionsBox").append("<button id='startOver'> New game</button>");
+                $("#startOver").click(generateQuestions);
+                reset();
+            }
+        //fucntion to reset my variables before starting new game
+        function reset()
+            {
+                counter = 0;
+                time = 30;
+                answersRight = 0;
+                answersWrong = 0
+                answersIncomplete = 0;
+            }
+        //counts down timeRemaining and calls timeout function
+        function timer() 
+                {
+                    clock = setInterval(countDown, 1000);
+                    function countDown()
                         {
-                            setTimeout(function () 
+                            if(time<1)
                                 {
-    // Below dynamically generates my trivia questions && buttons.
-                                    if(i<=7 && i!=0)
-                                        {
-                                            //var objectPos = questionsArr[i];
-                                            timeRemaining=31;
-                                            $("#questionsBox").html('<span id="timeLeft"></span><br>'+'<span class="question">' + objectPos.question + '</span> <button class="answer" id="'+ objectPos.optionA + '">' + objectPos.optionA + ' </button>' + '<button class="answer" id="'+ objectPos.optionB + '" >' + objectPos.optionB + ' </button>' + '<button class="answer" id="'+ objectPos.optionC + '">' + objectPos.optionC + '  </button>' + '<button class="answer" id="'+ objectPos.optionD + '">' + objectPos.optionD + '  </button>' + objectPos.gif);   
-                                        }
-                                    if(i<8)
-                                        {
-                                            i++;
-                                        }
-                                    if(i>=8)
-                                        {
-                                            i = 8;
-                                        }
-                                    generateQuestions();
-                                }, 31000);
+                                    clearInterval(clock);
+                                    onTimeout();
+                                }   
+                            if (time>0)
+                                {
+                                    time--;
+                                    $(".timeRemaining").html("<b>" + time + "</b>");
+                                    console.log(time);
+                                }
                         }
-                    //Below writes down time remaining to my html
-                    function writeTime()
-                        {
-                            setTimeout(function ()
-                            {
-                                timeRemaining--
-                                $("#timeLeft").text("You have: " + timeRemaining +" seconds remaining.");
-                                //below prevents negative countdown timer
-                                if(timeRemaining < 0)
-                                    {
-                                        timeRemaining=0;
-                                    }
-                                if(timeRemaining === 0)
-                                    {
-                                        $("#timeLeft").text("You ran out of time.");
-                                        if(i===8 && timeRemaining === 0)
-                                            {
-                                                $("#timeLeft").text("Game Over.");
-                                                $("#questionsBox").html("");
-                                                $("#questionsBox").append("<button id='startGame'>Play Again</button>")
-                                                $("#startGame").on("click", start);
-                                                gameStarted=false;
-                                                return;
-                                            }
-                                    }
-                                writeTime();
-                            }, 1000)
-                        }
-                        //Below initiates the function to write time remaining to html
-                    if(timeRemaining <= 31 && timeRemaining > 0 && gameStarted===true)
-                        {
-                            writeTime();
-                        }    
-                    generateQuestions();
-                    if(gameStarted === true)
-                        {
-                            $(document).on("click", ".answer", grabSelection);
-                        }
-
-            }
-
-
-
-
-
-
-// This is a self calling/looping function below
-            function test() {
-                setTimeout(function () {
-                    // Do Something Here
-                    // Then recall the parent function to
-                    // create a recursive loop.
-                    console.log("test")
-                    test();
-                }, 1000);
-            }
-// End reference function
-
-
-
-
-$("#startGame").on("click", start);
-
-test();
-
-
-
-
-
-
-
-
-
-
-
-
+      
+                }
+        $("#questionsBox").on("click", ".choices", (function() 
+            {
+                var userGuess = $(this).text();
+                if (userGuess === questionsArr[counter].rightAnswer)
+                    {
+                        clearInterval(clock);
+                        onCorrect();
+                    }
+                else
+                    {
+                        clearInterval(clock);
+                        onWrong();
+                    }
+            }))
     });
