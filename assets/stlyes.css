@@ -1,0 +1,27 @@
+h1{
+    font-family: 'Pacifico', cursive;
+}
+button{
+    display: block;
+    margin-left:45%;
+}
+body{
+    min-height:100%!important;
+    min-width:100%!important;
+    background-image: url("./images/snowing.jpg");
+    background-size:cover;
+
+}
+.triviaBox{
+    width:40%;
+    height:500px;
+    margin:auto;
+    margin-top:10%;
+    background-color:beige;
+    text-align:center;
+}
+.gif{
+    margin-right:20%;
+    height:50%;
+    width:50%;
+}

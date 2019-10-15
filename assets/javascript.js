@@ -24,56 +24,56 @@ $( document ).ready(function()
                     question:'Who sings the "Gilmore Girls" theme song?',
                     rightAnswer: "Carole King",
                     options:["Stevie Nicks", "Carole King", "Mariah Carey", "Katy Perry"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqov5zNNx8FyHS0/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqov5zNNx8FyHS0/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             two = 
                 {
                     question:'What is the name of the private school Rory attends?',
                     rightAnswer:"Chilton",
                     options:["Tipton", "Harvard", "Overbrook", "Chilton"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTzIRIjwV2pHMkM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTzIRIjwV2pHMkM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             three = 
                 {
                     question: "What are the first words in the pilot episode?",
                     rightAnswer:'"Please Luke. Please, please, please."',
                     options:['"Please Luke. Please, please, please."', '"Coffee coffee coffee!"', '"Watch out!"', '"Did I put on underwear?"'],
-                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUySTPAS9poVD23jCo/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUySTPAS9poVD23jCo/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             four = 
                 {
                     question: "What is the name of the inn where Lorelai works in the early seasons?",
                     rightAnswer: 'The Independence Inn',
                     options:["Freedom Inn", "The Patriot Inn", "The Independence Inn", "The Chilton"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l1L0gM1jJiWskWt8I/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l1L0gM1jJiWskWt8I/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             five = 
                 {
                     question:"What day of the week is dinner with the grandparents on?",
                     rightAnswer:"Friday",
                     options:["Friday", "Sunday", "Thursday", "Saturday"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqrPftTyi8zq848/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/xUPOqrPftTyi8zq848/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             six = 
                 {
                     question:"Who is Rory's nemesis when she first starts at Chilton?",
                     rightAnswer:"Paris",
                     options:["Morgan", "Emily", "Paris", "Lorelai"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/3ofT5OGmdbeaMtUSYg/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/3ofT5OGmdbeaMtUSYg/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             seven = 
                 {
                     question:"What does Lorelai have a keen sense of smell for?",
                     rightAnswer:"Snow",
                     options:["Rain", "Snow", "Coffee", "Lying"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l0ErAPxo8r9aXLSH6/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',
+                    gif: '<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><img src="https://media.giphy.com/media/l0ErAPxo8r9aXLSH6/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',
                 },
             eight = 
                 {
                     question:"What is the name of the Chilton school newspaper?",
                     rightAnswer:"The Franklin",
                     options:["The Gazette", "The Herald", "The Daily", "The Franklin"],
-                    gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTN0WMbFqv1DcIM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>',   
+                    gif: '<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><img src="https://media.giphy.com/media/xUySTN0WMbFqv1DcIM/giphy.gif" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen class="gif"></div>',   
                 },
         ]
         //creates my questions with all possible answers
